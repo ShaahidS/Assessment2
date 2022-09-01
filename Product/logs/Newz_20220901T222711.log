@@ -1,0 +1,60 @@
+2022-09-01 22:27:12 [restartedMain] DEBUG o.s.b.c.l.ClasspathLoggingApplicationListener -
+				Application failed to start with classpath: [file:/E:/MyWorkspace/Product/target/classes/, file:/E:/ITC/newz-step3-boilerplate/target/classes/]
+2022-09-01 22:27:12 [background-preinit] DEBUG org.jboss.logging -
+				Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2022-09-01 22:27:12 [background-preinit] INFO  o.h.validator.internal.util.Version -
+				HV000001: Hibernate Validator 6.0.18.Final
+2022-09-01 22:27:12 [background-preinit] DEBUG o.h.v.i.e.r.TraversableResolvers -
+				Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2022-09-01 22:27:12 [background-preinit] DEBUG o.h.v.i.e.r.TraversableResolvers -
+				Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2022-09-01 22:27:12 [background-preinit] DEBUG o.h.v.i.x.config.ValidationXmlParser -
+				Trying to load META-INF/validation.xml for XML based Validator configuration.
+2022-09-01 22:27:12 [background-preinit] DEBUG o.h.v.i.x.c.ResourceLoaderHelper -
+				Trying to load META-INF/validation.xml via TCCL
+2022-09-01 22:27:12 [background-preinit] DEBUG o.h.v.i.x.c.ResourceLoaderHelper -
+				Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2022-09-01 22:27:12 [background-preinit] DEBUG o.h.v.i.x.config.ValidationXmlParser -
+				No META-INF/validation.xml found. Using annotation based configuration only.
+2022-09-01 22:27:12 [background-preinit] DEBUG o.h.v.m.ResourceBundleMessageInterpolator -
+				Loaded expression factory via original TCCL
+2022-09-01 22:27:12 [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl -
+				HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2022-09-01 22:27:12 [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl -
+				HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2022-09-01 22:27:12 [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl -
+				HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2022-09-01 22:27:12 [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl -
+				HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2022-09-01 22:27:12 [background-preinit] DEBUG o.h.v.i.engine.ValidatorFactoryImpl -
+				HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2022-09-01 22:27:13 [restartedMain] ERROR o.s.boot.SpringApplication -
+				Application run failed
+java.lang.IllegalArgumentException: Unable to instantiate factory class [org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor] for factory type [org.springframework.boot.env.EnvironmentPostProcessor]
+	at org.springframework.core.io.support.SpringFactoriesLoader.instantiateFactory(SpringFactoriesLoader.java:168)
+	at org.springframework.core.io.support.SpringFactoriesLoader.loadFactories(SpringFactoriesLoader.java:104)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.loadPostProcessors(ConfigFileApplicationListener.java:193)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEnvironmentPreparedEvent(ConfigFileApplicationListener.java:184)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEvent(ConfigFileApplicationListener.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:76)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.itc.main.Product.ProductApplication.main(ProductApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.NoSuchMethodException: org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.<init>()
+	at java.base/java.lang.Class.getConstructor0(Class.java:3585)
+	at java.base/java.lang.Class.getDeclaredConstructor(Class.java:2754)
+	at org.springframework.util.ReflectionUtils.accessibleConstructor(ReflectionUtils.java:185)
+	at org.springframework.core.io.support.SpringFactoriesLoader.instantiateFactory(SpringFactoriesLoader.java:164)
+	... 20 common frames omitted
